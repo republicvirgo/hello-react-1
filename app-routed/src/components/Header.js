@@ -1,7 +1,5 @@
 import React from "react"
 
-import { Jumbotron } from "reactstrap"
-
 const Header = () => (
   <div>
     <h1 className="display-6">Hello, React Router!</h1>
