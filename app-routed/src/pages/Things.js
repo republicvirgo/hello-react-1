@@ -3,28 +3,30 @@ import { Route, Link } from "react-router-dom"
 
 import Thing from "../components/Thing"
 
+import THINGS from "../data/things"
+
 const Things = ({ match }) => (
   <div>
-    <h2>Things</h2>
-    <ul>
-      <li>
-        <Link to={`${match.url}/one`}>Thing One</Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/two`}>Thing Two</Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/three`}>Thing Three</Link>
-      </li>
-    </ul>
-
-    <hr />
-
     <Route path={`${match.url}/:thing_id`} component={Thing} />
     <Route
       exact
       path={match.url}
-      render={() => <h3>Please select a thing</h3>}
+      render={() => (
+        <div>
+          <h3>Please select a thing</h3>
+          <ul>
+            {THINGS.map((THING) => {
+              return (
+                <li key={THING.id}>
+                  <Link to={`${match.url}/${THING.id}`}>
+                    {THING.name} with {THING.project}
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      )}
     />
   </div>
 )

@@ -1,4 +1,6 @@
 import React, { Component } from "react"
+
+import "bootstrap/dist/css/bootstrap.min.css"
 import { Container, Row, Col } from "reactstrap"
 import { Breadcrumb, BreadcrumbItem } from "reactstrap"
 
@@ -9,8 +11,6 @@ import About from "./pages/About"
 import Things from "./pages/Things"
 
 import Header from "./components/Header"
-
-import "bootstrap/dist/css/bootstrap.min.css"
 
 export default class App extends Component {
   render() {
@@ -40,7 +40,7 @@ export default class App extends Component {
               </Breadcrumb>
             </Col>
           </Row>
-
+          
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/things" component={Things} />
