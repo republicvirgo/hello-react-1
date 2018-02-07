@@ -1,17 +1,36 @@
 import React, { Component } from "react"
+import { Container, Row, Col } from "reactstrap"
+import { Jumbotron, Button } from "reactstrap"
+import { Breadcrumb, BreadcrumbItem } from "reactstrap"
+
 import "bootstrap/dist/css/bootstrap.min.css"
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">App Title</h1>
-        </header>
-        <p className="App-intro">Hello World</p>
-      </div>
+      <Container>
+        <Row>
+          <Col>
+            <Jumbotron>
+              <h1 className="display-3">Hello, React Router!</h1>
+              <p className="lead">Simple way to use routing in React</p>
+            </Jumbotron>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Breadcrumb>
+              <BreadcrumbItem>
+                <a href="#">Home</a>
+              </BreadcrumbItem>
+              <BreadcrumbItem active>About</BreadcrumbItem>
+            </Breadcrumb>
+          </Col>
+        </Row>
+        <Row>
+          <Col>Hello World. Welcome to this app.</Col>
+        </Row>
+      </Container>
     )
   }
 }
-
-export default App
