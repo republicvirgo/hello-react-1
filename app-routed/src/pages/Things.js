@@ -1,7 +1,7 @@
 import React from "react"
 import { Route, Link } from "react-router-dom"
 
-import Thing from "./Thing"
+import Thing from "../components/Thing"
 
 const Things = ({ match }) => (
   <div>
